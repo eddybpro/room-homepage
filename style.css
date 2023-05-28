@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+:root{
+    --Dark-Gray: hsl(0, 0%, 63%);
+    --Black: hsl(0, 0%, 0%);
+    --White: hsl(0, 0%, 100%);
+    --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+main{
+    position: relative;
+}
+
+nav{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    right: 2rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 10rem;
+    z-index: 10;
+}
+
+.nav-list{
+    position: absolute;
+    background-color: var(--White);
+    top: -3rem;
+    left: -3rem;
+    right: -3rem;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-list::after{
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: calc(3rem - 100vh);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 3rem);
+    background-color:var(--Black);
+    opacity: .5;
+}
+
+li{
+    padding: 1rem 0;
+}
+
+li > a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--Black);
+    font-weight: bold;
+    text-transform: lowercase;
+    transition: all .2s ease-in-out;
+}
+.menu, .close{
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close{
+    padding: 1rem 0;
+}
+
+.img-slider-container{
+    position: relative;
+}
+
+.img-slider{
+    height: 35rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.img-slide-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease-in-out;
+}
+
+.img-slide-box:first-child{
+    background: url('./images/mobile-image-hero-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-slide-box:nth-child(2){
+    background: url('./images/mobile-image-hero-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.img-slide-box:last-child{
+    background: url('./images/mobile-image-hero-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btns{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 9rem;
+    background-color: var(--Black);
+}
+
+.btn{
+    background-color: var(--Black);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+.btn > img{
+    width: 1.3rem;
+}
+
+.txt-slider-container{
+    position: relative;
+    height: 35rem;
+    overflow: hidden;
+}
+
+.txt-slide-box{
+    position: absolute;
+    padding: 2rem 3rem;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease-in-out;
+}
+
+.txt-title{
+    font-size: 3.6rem;
+    color: var(--Black);
+    margin-bottom: 2rem;
+}
+
+.txt-para{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: var(--Dark-Gray);
+    margin-bottom: 2rem;
+}
+
+.shop-btn{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .5rem;
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+.shop-btn > img{
+    width: 6rem;
+    transition: all .2s ease-in-out;
+}
+
+.first-img > img{
+    width: 100%;
+}
+
+.about-card{
+    padding: 2rem 3rem;
+}
+
+.about-title{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--Black);
+    margin-bottom: 1.5rem;
+}
+
+.about-para{
+    color: var(--Dark-Gray);
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.last-img > img{
+    width: 100%;
+}
+
+footer{
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.attribution{
+    font-size: 1.2rem;
+    color: var(--Dark-Gray);
+    line-height: 2rem;
+}
+
+.attribution > a{
+    color: var(--Black);
+    text-decoration: none;
+}
+
+/* ----------- MEDIA QUERY ------ */
+
+@media screen and (min-width:540px) {
+    .img-slider{
+        height: 60rem;
+    }
+}
+
+.none{
+    display: none;
+}
+
+@media screen and (min-width:768px) {
+    nav{
+        flex-direction: row-reverse;
+        top: auto;
+        right: auto;
+        align-items: center;
+        gap: 3rem;
+    }
+    .menu, .close{
+        display: none;
+    }
+
+    .nav-list{
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .nav-list::after{
+        display: none;
+    }
+
+    li{
+        padding: 0;
+    }
+
+    li > a{
+        color: var(--White);
+    }
+
+    .slides-wrapper{
+        display: grid;
+        grid-template-columns: 55% 45%;
+    }
+
+    .img-slider{
+        height: 40rem;
+    }
+
+    .img-slide-box:first-child{
+        background: url('./images/desktop-image-hero-1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .img-slide-box:nth-child(2){
+        background: url('./images/desktop-image-hero-2.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+    
+    .img-slide-box:last-child{
+        background: url('./images/desktop-image-hero-3.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .btns {
+        bottom: 2rem;
+        right: -8.91rem;
+    }
+
+    .about-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: -3rem;
+    }
+
+    .about-card{
+        padding: 3rem 0;
+    }
+}
+
+@media screen and (min-width:1010px) {
+    .about-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: -2rem;
+    }
+}
+
+@media(hover:hover){
+    li > a:hover{
+        border-bottom: .2rem solid var(--White);
+        padding-bottom: 1rem;
+    }
+
+    .shop-btn:hover{
+        color: var(--Dark-Gray);
+    }
+
+    .shop-btn:hover img{
+        filter: opacity(.5);
+    }
+
+    .next:hover, .prev:hover{
+        background-color: var(--Very-Dark-Gray);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
